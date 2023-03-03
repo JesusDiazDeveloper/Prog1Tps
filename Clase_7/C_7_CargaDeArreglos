@@ -1,0 +1,210 @@
+//CARGAR ARREGLO INT DESDE TECLADO
+
+    public static void cargar_arreglo_int(int[]arr){
+    BufferedReader entrada=new BufferedReader(new InputStreamReader(System.in));
+    try{
+    for(int pos=0;pos<MAX;pos ++){
+        System.out.println("Ingrese un entero:");
+        arr[pos]=Integer.valueOf(entrada.readLine());
+    }
+    }
+    catch(Exception exc){
+        System.out.println(exc);
+    }
+    }
+
+// llamar a la carga e impresion del arreglo
+    import java.util.Random;
+    public class Clase_7_Ejemplo_2{
+    public static final int MAX=10;
+    public static final int MAXVALOR=10;
+    public static final int MINVALOR=1;
+    public static void main(String[]args){
+    
+    char [] arrchar = new char[MAX];
+    cargar_arreglo_aleatorio_char(arrchar);
+    imprimir_arreglo_char(arrchar);
+
+    int [] arrenteros = new int[MAX];
+    cargar_arreglo_aleatorio_int(arrenteros);
+    imprimir_arreglo_int(arrenteros);
+
+    double [] arrdouble = new double[MAX];
+    cargar_arreglo_aleatorio_double(arrdouble);
+    imprimir_arreglo_double(arrdouble);
+    }
+}
+
+// carga de arreglo de char con valores de'a' a la 'z' (ABAJO) 
+    (char[]arr){cargar_arreglo_aleatorio_char public static void
+        Randomr=new Random();
+        for(int pos=0;pos<MAX;pos ++){
+        arr[pos]=(char)(r.nextInt(26)+'a');
+        }
+    }
+
+// impresion de arreglo de char 
+    public static void imprimir_arreglo_char(char[]arr){
+        for(int pos=0;pos<MAX;pos ++){
+        System.out.println("nombre_arreglo["+pos+"]=>:"+arr[pos]);
+        }
+}
+
+// carga de arreglo de int
+    public static void cargar_arreglo_aleatorio_int(int[]arr){
+        Random r=new Random();
+        for(int pos = 0;pos<MAX;pos ++){
+        arr[pos]=(r.nextInt(MAXVALOR-MINVALOR+1)+MINVALOR);
+        }
+    }
+
+// impresion de arreglo de int
+    public static void imprimir_arreglo_int(int[]arr){
+    for(int pos=0;pos<MAX;pos ++){
+    System.out.println("nombre_arreglo["+pos+"]=>:"+arr[pos]);
+    }
+}
+
+// carga de arreglo de double con valores de MINVALORaMAXVALOR (ABAJO)
+    public static void cargar_arreglo_aleatorio_double(double[]arr){
+        Randomr=new Random();
+        for(int pos=0;pos<MAX;pos ++){
+        arr[pos]=((MAXVALOR-MINVALOR+1)*r.nextDouble()+MINVALOR*1.0);
+        }
+        }
+
+// impresion de arreglo de double
+    public static void imprimir_arreglo_double(double[]arr){
+    for(int pos=0;pos<MAX;pos ++){
+    System.out.println("nombre_arreglo["+pos+"]=>:"+arr[pos]);
+    }
+
+
+//ACA EMPIEZAN LOS MIOS 
+
+public static int verificar_si_existe_numero_dentro_del_arreglo(int [] arrenteros, int numero){
+    int pos = 0; 
+    while ((pos < MAX ) && (numero != arrenteros[pos])){
+        pos++;
+    } 
+    return pos; 
+}
+/*-------------------------SECUENCIAS--------------------- */
+
+
+    import java.util.Random;
+
+    public static final int MAX = 40;
+    public static final int MAXVALOR = 9;
+    public static final int MINVALOR = 1;
+    public static final double probabilidad_letra = 0.4;
+    public static final double probabilidad_numero = 0.4;
+    public static void main(String[] args) {
+    char [] arrchar;
+    int [] arrenteros;
+    arrchar = new char[MAX];
+    arrint = new int[MAX];
+    cargar_arreglo_aleatorio_secuencias_char(arrchar);
+    imprimir_arreglo_secuencias_char(arrchar);
+    cargar_arreglo_aleatorio_secuencias_int(arrenteros);
+    imprimir_arreglo_secuencias_int(arrenteros);
+    }
+
+
+public static void cargar_arreglo_aleatorio_secuencias_char(char [] arr){
+    Random r = new Random();
+    arr[0] = ' ';
+    arr[MAX-1] = ' ';
+    for (int pos = 1; pos < MAX-1; pos++){
+    if (r.nextDouble()>probabilidad_letra){
+    arr[pos]=(char)(r.nextInt(26) + 'a');
+    }
+    else{
+    arr[pos]=' ';
+    }
+    }
+    }
+
+public static void imprimir_arreglo_secuencias_char(char [] arr){
+        System.out.print("Arreglo de secuencias char\n|");
+        for (int pos = 0; pos < MAX; pos++){
+        System.out.print(arr[pos]+"|");
+        }
+        System.out.print("\n");
+        }
+
+public static void cargar_arreglo_aleatorio_secuencias_int(int []
+        arr){
+        Random r = new Random();
+        arr[0] = 0;
+        arr[MAX-1] = 0;
+        for (int pos = 1; pos < MAX-1; pos++){
+        if (r.nextDouble()>probabilidad_numero){
+        arr[pos]=(r.nextInt(MAXVALOR-MINVALOR+1) + MINVALOR);
+        }
+        else{
+        arr[pos]=0;
+        }
+        }
+        }
+
+public static void imprimir_arreglo_secuencias_int(int [] arr){
+    System.out.print("Arreglo de secuencias int\n|");
+    for (int pos = 0; pos < MAX; pos++){
+    System.out.print(arr[pos]+"|");
+    }
+    System.out.print("\n");
+    }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------- Hechos por mi ----------------- */
+public static void invertir_el_orden_del_arreglo(int [] arrenteros){
+    int auxiliar;
+    for (int i=0; i<MAX/2 ; i++){
+        auxiliar = arrenteros [MAX-1-i]; // auxiliar guarda el numero que esta en la posicion MAX-1-i (10-1-0 = 9)
+        arrenteros [MAX-1-i] = arrenteros[i]; // i vale 0 --> a la posicion 10-1-0 (posicion 9) = a lo que esta en la posicion 0 
+                                                                    // i vale 1 -->  2da vuelta: 10 -1-1 (posicion 8) =  a lo que esta en la posicion 1
+        arrenteros [i]= auxiliar;// lo mismo pero invertido, a la poscicon10-1-0 (posicion 9) = al valor que guarde de lo que valia i
+    }
+}
+
+public static void hacer_corriemiento_a_derecha(int [] arr, int posicion ){
+    int indice = MAX-1; 
+    while (indice>posicion){
+        arr [indice] = arr [indice-1]; 
+        indice--;
+    }
+}
+
+public static void corrimiento_izquierda(int []arrenteros, int numeroIngresado){
+    int posicion = 0; 
+    while((posicion <= numeroIngresado) ){
+        arrenteros [posicion] = arrenteros [posicion+1];
+        posicion++;
+    }
+}
+
+public static void ordenar_arreglo_entre_dos_posiciones(int [] arr,int posInicio,int posFin){
+    int temp; 										//defino variable temporal
+    for(int i = posInicio ; i < posFin; i++){				//for  i menor que MAX i++
+        for (int j = posInicio ; j < posFin; j++){		// for j menor que MAX-1 ; j++
+            if (arr[j] > arr[j+1]){		// si arreglo en posicion [j] es mayor que arr[j+1](que es el siguiente)
+                temp = arr[j];				// entonces guardo el valor la posicion j en la temporal
+                arr[j] = arr[j+1];			// a la posicion j le doy el valor de j+1 (la siguiente que seria mas pequeña)
+                arr[j+1] = temp;				//a la posicion [j+1] le doy el valor que guarde en temp.  
+                }
+            }
+        }
+    }

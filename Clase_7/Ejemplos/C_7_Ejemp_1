@@ -1,0 +1,53 @@
+/*Hacer un programa que cargue en un arreglo de enteros 5 
+valores desde teclado y lo imprima.
+ESTE EJEMPLO ESTA HECHO SIN METODOS, SOLO PARA EXPLICAR COMO FUNCIONA 
+(MAS ADELANTE SE HACE CON METODOS)*/ 
+    
+    /*
+    importar lib 
+    
+    MAX Global
+    
+    declarar 
+    	arreglo de enteros
+        buffer
+        
+        try 
+        	for menor que MAX
+            	obtener numero 
+            	guardarlo en una posicion
+            
+            cuando sale, imprimir las 5 posiciones. 
+            
+        catch 
+    
+    
+    */
+   
+    import java.io.BufferedReader; 
+    import java.io.InputStreamReader; 
+    
+    public class C_7_Ejemp_1 {
+        public static final int MAX = 5; // esto para mas adelante, cambiar el tamaño del arreglo  
+        public static void main(String[] args) {
+        int [] arregloDeEnteros = new int [MAX];
+        BufferedReader entrada = new BufferedReader (new InputStreamReader (System.in));
+    
+        try {
+            // Aca le pedimos un valor y lo vamos llenando. 
+            for (int posicion=0 ; posicion< MAX ; posicion++ ){
+                System.out.println("Ingrese un entero para ir llenando el arreglo");
+                arregloDeEnteros[posicion] = Integer.valueOf(entrada.readLine()); 
+            }
+            // Aca vamos a mostrarlo: 
+            for (int posicion = 0; posicion < MAX ; posicion++ ){
+                System.out.println("el valor de la posicion ["+posicion+"]  es: " + arregloDeEnteros[posicion]);
+            }
+        }
+        catch(Exception exc){
+            System.out.println(exc);
+        }
+        
+      }
+    }
+    

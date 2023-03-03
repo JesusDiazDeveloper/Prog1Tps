@@ -1,0 +1,6 @@
+{
+    "editor.fontSize": 14,
+    "editor.inlineSuggest.enabled": true,
+    "java.autobuild.enabled": true,
+    "java.completion.enabled": true
+}

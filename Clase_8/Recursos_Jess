@@ -1,0 +1,18 @@
+
+
+
+
+public static void corrimiento_der(int [] filaDeLaMatriz, int columnaIngresada) {
+        int pos = MAXCOLUMNA-1;
+        while (pos>columnaIngresada){
+            filaDeLaMatriz[pos] = filaDeLaMatriz[pos-1];  
+            pos--;
+        } 
+    }
+
+public static void corrimiento_izq(int [] fila , int columna){
+    while(columna<MAXCOLUMNA-1){
+        fila[columna] = fila[columna+1];
+        columna++;
+    }
+}

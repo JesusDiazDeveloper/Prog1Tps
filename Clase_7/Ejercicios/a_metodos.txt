@@ -1,0 +1,27 @@
+package Ejercicios;
+
+public class a_metodos {
+    int pos; 
+    
+
+}
+
+pos = encontrar_primer_ocurrencia (arrenteros , numeroIngresado);
+
+public static int encontrar_primer_ocurrencia (int [] arrenteros ,int numeroIngresado){
+    int pos = 0;
+    while ((pos < MAX -1) && (numeroIngresado != arrenteros[pos])){
+        pos++;
+    }
+    return pos;
+}
+
+
+public static void corrimiento_izquierda(int [] arr , int pos){
+       while(pos < MAX -1){
+        arr [pos] = arr[pos+1];
+        pos++;
+        }
+    }
+
+ 
